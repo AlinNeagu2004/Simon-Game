@@ -1,10 +1,20 @@
 // Create A New Pattern
 
 var buttonColours = ["red", "blue", "green", "yellow"];
-
 var gamePattern = [];
-
 var userClickedPattern = [];
+
+var level = 0;
+
+// Start the Game
+
+$(document).one("keydown", function (event) {
+  if (event.shiftKey) {
+    nextSequence();
+  } else {
+    nextSequence();
+  }
+});
 
 // Check Which Button is Pressed
 
@@ -13,6 +23,7 @@ $(".btn").click(function () {
   userClickedPattern.push(userChosenColour);
   playSound(userChosenColour);
   animatePress(userChosenColour);
+  setTimeout(nextSequence, 1000);
 });
 
 function nextSequence() {
@@ -20,7 +31,9 @@ function nextSequence() {
   var randomChosenColour = buttonColours[randomNumber];
   gamePattern.push(randomChosenColour);
 
-  // Show the Sequence to the User with Animations and Sounds
+  // Show the Sequence to the User with Animations, Sounds and Levels
+  level++;
+  $("#level-title").text("Level " + level);
 
   $("#" + randomChosenColour)
     .fadeIn(100)
