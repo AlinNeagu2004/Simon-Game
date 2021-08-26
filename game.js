@@ -10,13 +10,35 @@ var level = 0;
 
 // Start the Game
 
-$(document).keydown(function () {
-  if (!started) {
-    $("#level-title").text("Level " + level);
+if (
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  )
+) {
+  $(".btn").css("display", "none");
+  setTimeout(function () {
+    $("#level-title").text("Game Starts in 3");
+  }, 0);
+  setTimeout(function () {
+    $("#level-title").text("Game Starts in 2");
+  }, 1000);
+
+  setTimeout(function () {
+    $("#level-title").text("Game Starts in 1");
+  }, 2000);
+
+  setTimeout(function () {
     nextSequence();
-    started = true;
-  }
-});
+  }, 3000);
+} else {
+  $(document).keydown(function () {
+    if (!started) {
+      $("#level-title").text("Level " + level);
+      nextSequence();
+      started = true;
+    }
+  });
+}
 
 // Check Which Button is Pressed
 
@@ -46,12 +68,23 @@ function checkAnswer(currentLevel) {
       $("body").removeClass("game-over");
     }, 200);
     $("#level-title").text("Game Over, Press Any Key to Restart");
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      $("#level-title").text("Game Over, Press Anywhere to Restart");
+      $(".btn").css("visibility", "hidden");
+    }
     startOver();
   }
 }
 
 function nextSequence() {
   userClickedPattern = [];
+
+  // For mobile
+  $(".btn").css("display", "inline-block");
 
   var randomNumber = Math.floor(Math.random() * 4);
   var randomChosenColour = buttonColours[randomNumber];
