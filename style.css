@@ -3,6 +3,7 @@
 :root {
   --background-clr: #011f3f;
   --title-clr: #fef2bf;
+  --title-clr2: #ff4a4a;
 }
 
 body {
@@ -33,6 +34,10 @@ body {
   width: 200px;
   border: 10px solid black;
   border-radius: 20%;
+}
+
+.unclickable-btn {
+  pointer-events: none;
 }
 
 .game-over {
