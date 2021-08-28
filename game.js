@@ -1,3 +1,13 @@
+// SoundJS
+
+function loadSound() {
+  createjs.Sound.registerSound("sounds/blue.mp3", "blue");
+  createjs.Sound.registerSound("sounds/green.mp3", "green");
+  createjs.Sound.registerSound("sounds/red.mp3", "red");
+  createjs.Sound.registerSound("sounds/yellow.mp3", "yellow");
+  createjs.Sound.registerSound("sounds/wrong.mp3", "wrong");
+}
+
 // Create A New Pattern
 
 var buttonColours = ["red", "blue", "green", "yellow"];
@@ -105,8 +115,7 @@ function nextSequence() {
 // Sounds
 
 function playSound(name) {
-  var audio = new Audio("sounds/" + name + ".mp3");
-  audio.play();
+  createjs.Sound.play(name);
 }
 
 // Animations to User Clicks
