@@ -91,7 +91,7 @@ function checkAnswer(currentLevel) {
       $(".btn").addClass("unclickable-btn");
       $("#level-title").css({
         color: "var(--title-clr2)",
-        "text-shadow": "5px 5px var(--title-clr)",
+        "text-shadow": "3px 3px var(--title-clr)",
       });
       setTimeout(function () {
         $("body").removeClass("game-over");
@@ -111,8 +111,18 @@ function checkAnswer(currentLevel) {
       setTimeout(function () {
         $("body").removeClass("game-over");
       }, 200);
-      $("#level-title").text("Game Over, Press Any Key to Restart");
-      startOver();
+      $("#level-title").css({
+        color: "var(--title-clr2)",
+        "text-shadow": "3px 3px var(--title-clr)",
+      });
+      setTimeout(function () {
+        $("#level-title").css({
+          color: "var(--title-clr)",
+          "text-shadow": "none",
+        });
+        $("#level-title").text("Game Over, Press Any Key to Restart");
+        startOver();
+      }, 2000);
     }
   }
 }

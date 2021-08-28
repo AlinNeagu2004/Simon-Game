@@ -13,7 +13,8 @@ body {
 
 #level-title {
   font-family: "Press Start 2P", cursive;
-  font-size: 3rem;
+  font-size: calc(2vw + 1rem);
+  line-height: 1.5;
   margin: 5%;
   color: var(--title-clr);
 }
@@ -23,15 +24,14 @@ body {
 .container {
   user-select: none;
   display: block;
-  width: 50%;
   margin: auto;
 }
 
 .btn {
   margin: 25px;
   display: inline-block;
-  height: 200px;
-  width: 200px;
+  height: calc(8vw + 5rem);
+  width: calc(8vw + 5rem);
   border: 10px solid black;
   border-radius: 20%;
 }
@@ -64,4 +64,22 @@ body {
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 500px) {
+  .btn {
+    border: 5px solid black;
+    margin: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .btn {
+    width: calc(0.5vw + 5rem);
+    height: calc(0.5vw + 5rem);
+    border: 5px solid black;
+    margin: 10px;
+  }
 }
