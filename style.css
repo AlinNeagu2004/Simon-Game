@@ -23,14 +23,16 @@ body {
 
 .container {
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   display: block;
   margin: auto;
 }
 
 .btn {
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
   margin: 25px;
   display: inline-block;
   height: calc(8vw + 5rem);
@@ -66,7 +68,7 @@ body {
 
 .pressed {
   -webkit-box-shadow: 0 0 20px white;
-          box-shadow: 0 0 20px white;
+  box-shadow: 0 0 20px white;
   background-color: grey;
 }
 
