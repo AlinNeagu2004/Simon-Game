@@ -22,7 +22,10 @@ body {
 /* BUTTONS */
 
 .container {
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   display: block;
   margin: auto;
 }
@@ -62,7 +65,8 @@ body {
 }
 
 .pressed {
-  box-shadow: 0 0 20px white;
+  -webkit-box-shadow: 0 0 20px white;
+          box-shadow: 0 0 20px white;
   background-color: grey;
 }
 
