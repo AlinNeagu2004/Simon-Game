@@ -9,6 +9,9 @@
 ### What's included
 
 + JavaScript syntax & Basic Constructs
++ Libraries:
+  * jQuery
+  * SOUNDJS
 + Basic codes of HTML5 & CSS3
 + DOM Manipulation
 + ES6+
